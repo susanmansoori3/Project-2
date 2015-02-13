@@ -1,0 +1,50 @@
+// Place all the styles related to the users controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+@mixin border-radius($radius) {
+	-webkit-border-radius: $radius; //safari
+	-moz-border-radius: $radius; //mozilla
+	-ms-border-radius: $radius; //internet explorer
+	border-radius: $radius;
+
+}
+
+.border-party {
+	border: 2px solid black;
+}
+
+
+$basewidth: 600px;
+$maincolor: #859DC6;
+$mainfont: 'Roboto Slab', serif;
+
+
+body {
+	background-image: url(starrynight.jpg);
+	background-repeat: no-repeat;
+	background-size: cover;
+	text-align: center;
+}
+
+.main {
+	background-color: white;
+	margin: auto 0;
+	width: $basewidth /960px *100%;
+	font-family: $mainfont;
+	@include border-radius(15px);
+}
+
+.painting {
+	background-color: darken($maincolor, 50%);
+	color: lighten($maincolor, 20%);
+}
+
+.details {
+	background-color: $maincolor;
+	@extend .border-party;
+}
+
+body {
+	
+}
