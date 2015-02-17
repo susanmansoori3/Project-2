@@ -1,5 +1,7 @@
 Rails.application.routes.draw do
   
+  root to: 'sessions#new'
+  delete '/sessions' => 'sessions#destroy', as: 'logout'
   #this could also be: because it's only ever ONE session make it resource!!
   resource :sessions, only: [:new, :create, :destroy]
   #this provides a smaller attack surface when making only certain routes

@@ -3,10 +3,10 @@ class CreateInvitations < ActiveRecord::Migration
     create_table :invitations do |t|
       t.string :title
       t.string :description
-      t.references :user, index: true
+      t.integer :inviter_id
+      t.integer :invitee_id
 
       t.timestamps null: false
     end
-    add_foreign_key :invitations, :users
   end
 end

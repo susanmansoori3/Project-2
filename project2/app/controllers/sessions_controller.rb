@@ -2,6 +2,9 @@ class SessionsController < ApplicationController
   def new
   	# the session that we have is based on a user logging in, so login form is taking queues from user 
   	@user = User.new
+    if params[:user_created] == 'true'
+      @user_created_message = 'User successfully created!'
+    end
   end
 
   def create
@@ -16,11 +19,12 @@ class SessionsController < ApplicationController
   		# set the session to the browser. saving the session id here, not saving it in the database but here as a cookie
   		# Session - intrinsic to rails and is a baked in rails property, different from the sessions we made
   		session["user_id"] = u.id.to_s
-  		redirect_to users_path
+  		redirect_to invitations_path
   end
 end
 
   def destroy
   	session.destroy
+    redirect_to new_session_path
   end
 end

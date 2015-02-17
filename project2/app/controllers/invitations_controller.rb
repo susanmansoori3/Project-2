@@ -10,6 +10,11 @@ class InvitationsController < ApplicationController
   end
 
   def destroy
+    #
+    @invitation = Invitation.where(id: params[:id]).first
+    #admin should be the only ones delete ***Future 
+    @invitation.destroy
+    redirect_to invitations_path
   end
 
   def new
@@ -20,7 +25,7 @@ class InvitationsController < ApplicationController
     invitation = Invitation.new(params.require(:invitation).permit(:title, :description))
     if invitation.save
       # Interest of time
-      redirect_to invitations_index
+      redirect_to invitations_path
     end
   end
 end

@@ -1,3 +1,6 @@
+<h3> <%= @user_created_message %> </h3>
+
+
 <h1>Log in</h1>
 
 <!-- Because your @user will post back to user, we need
@@ -9,3 +12,5 @@ it looks for the User -->
     <%= f.password_field :password %><br />
     <%= f.submit %>
 <% end %>
+
+<%= link_to 'New user? Create an account here', new_user_path %>

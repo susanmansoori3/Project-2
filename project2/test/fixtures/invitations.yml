@@ -3,9 +3,11 @@
 one:
   title: MyString
   description: MyString
-  user_id: 
+  inviter_id: 1
+  invitee_id: 1
 
 two:
   title: MyString
   description: MyString
-  user_id: 
+  inviter_id: 1
+  invitee_id: 1
